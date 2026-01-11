@@ -13,5 +13,6 @@
    :caption: 目录
 
    product/index
+   Github/index
    test/index
 
