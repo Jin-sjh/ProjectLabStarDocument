@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Apifox 测试指南 &#8212; Project LabStar v0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=262058dc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=f17d22cc"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'test/Apifox测试指南';</script>
+    <script src="../_static/custom.js?v=bcb55b57"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="前后端独立接口测试指南" href="%E5%89%8D%E5%90%8E%E7%AB%AF%E7%8B%AC%E7%AB%8B%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E6%8C%87%E5%8D%97.html" />
+    <link rel="prev" title="API 接口文档" href="API%E6%96%87%E6%A1%A3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Project LabStar v0.1.0 文档</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../product/index.html">
+    产品文档
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    测试文档
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../product/index.html">
+    产品文档
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    测试文档
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="章节导航">
+  <p class="bd-links__title" role="heading" aria-level="1">章节导航</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">测试文档</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="API%E6%96%87%E6%A1%A3.html">API文档demo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Apifox指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%89%8D%E5%90%8E%E7%AB%AF%E7%8B%AC%E7%AB%8B%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E6%8C%87%E5%8D%97.html">前后端独立接口测试指南</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="初始页面">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">测试文档</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Apifox 测试指南</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="apifox">
+<h1>Apifox 测试指南<a class="headerlink" href="#apifox" title="Link to this heading">#</a></h1>
+<p>本指南介绍如何使用 Apifox 进行前后端API联调测试。</p>
+<hr class="docutils" />
+<section id="id1">
+<h2>一、Apifox 简介<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Apifox 是一款集 API 文档、API 调试、API Mock、API 自动化测试于一体的 API 协作平台。它可以帮助前后端开发者高效地进行接口联调。</p>
+<section id="id2">
+<h3>Apifox 的优势<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>可视化界面</strong>: 直观的界面，无需编写代码即可测试API</p></li>
+<li><p><strong>环境管理</strong>: 支持多环境配置（开发、测试、生产）</p></li>
+<li><p><strong>参数自动填充</strong>: 根据API文档自动生成请求参数</p></li>
+<li><p><strong>响应格式化</strong>: 自动格式化JSON响应，便于查看</p></li>
+<li><p><strong>历史记录</strong>: 保存请求历史，方便回溯</p></li>
+<li><p><strong>团队协作</strong>: 支持团队成员共享API接口</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>二、准备工作<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>2.1 安装 Apifox<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>访问 Apifox 官网：https://apifox.com</p></li>
+<li><p>下载并安装对应操作系统的客户端</p></li>
+<li><p>注册/登录账号</p></li>
+</ol>
+</section>
+<section id="id5">
+<h3>2.2 启动后端服务<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>在项目根目录的 <code class="docutils literal notranslate"><span class="pre">backend</span></code> 文件夹下执行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装依赖</span>
+npm<span class="w"> </span>install
+
+<span class="c1"># 启动服务</span>
+npm<span class="w"> </span>start
+</pre></div>
+</div>
+<p>服务启动后，会在 <code class="docutils literal notranslate"><span class="pre">http://localhost:3001</span></code> 运行。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>三、在 Apifox 中创建项目<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>3.1 创建新项目<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>打开 Apifox 客户端</p></li>
+<li><p>点击左侧的&quot;新建项目&quot;按钮</p></li>
+<li><p>输入项目名称，例如：<code class="docutils literal notranslate"><span class="pre">前后端联调Demo</span></code></p></li>
+<li><p>选择项目类型：<code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">API</span></code></p></li>
+<li><p>点击&quot;创建&quot;</p></li>
+</ol>
+</section>
+<section id="id8">
+<h3>3.2 配置环境变量<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>在项目设置中，选择&quot;环境管理&quot;</p></li>
+<li><p>添加环境变量：</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>环境名称</p></th>
+<th class="head"><p>变量名</p></th>
+<th class="head"><p>变量值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>开发环境</p></td>
+<td><p>baseUrl</p></td>
+<td><p>http://localhost:3001/api</p></td>
+</tr>
+<tr class="row-odd"><td><p>测试环境</p></td>
+<td><p>baseUrl</p></td>
+<td><p>http://test.example.com/api</p></td>
+</tr>
+<tr class="row-even"><td><p>生产环境</p></td>
+<td><p>baseUrl</p></td>
+<td><p>http://prod.example.com/api</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="api">
+<h2>四、导入API接口<a class="headerlink" href="#api" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3>4.1 手动创建接口<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id10">
+<h4>示例：创建&quot;获取用户列表&quot;接口<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>在项目中点击&quot;新建接口&quot;</p></li>
+<li><p>填写接口信息：</p>
+<ul class="simple">
+<li><p><strong>接口名称</strong>: 获取用户列表</p></li>
+<li><p><strong>请求方法</strong>: GET</p></li>
+<li><p><strong>接口路径</strong>: <code class="docutils literal notranslate"><span class="pre">/users</span></code></p></li>
+<li><p><strong>接口描述</strong>: 分页获取用户列表，支持关键词搜索</p></li>
+</ul>
+</li>
+<li><p>配置请求参数（Query参数）：</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>参数名</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>说明</p></th>
+<th class="head"><p>示例值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>page</p></td>
+<td><p>number</p></td>
+<td><p>否</p></td>
+<td><p>页码</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>pageSize</p></td>
+<td><p>number</p></td>
+<td><p>否</p></td>
+<td><p>每页数量</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>keyword</p></td>
+<td><p>string</p></td>
+<td><p>否</p></td>
+<td><p>搜索关键词</p></td>
+<td><p>张</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>配置响应示例（成功）：</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;张三&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zhangsan@example.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;pagination&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pageSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;totalPages&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>配置响应示例（失败）：</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;服务器错误&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h3>4.2 批量导入接口<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>如果已有 OpenAPI/Swagger 文档，可以直接导入：</p>
+<ol class="arabic simple">
+<li><p>点击项目设置中的&quot;导入数据&quot;</p></li>
+<li><p>选择&quot;OpenAPI&quot;</p></li>
+<li><p>粘贴或上传 OpenAPI 文档内容</p></li>
+<li><p>点击&quot;导入&quot;</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id12">
+<h2>五、测试API接口<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<section id="id13">
+<h3>5.1 发送请求<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>选择要测试的接口（例如：<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/users</span></code>）</p></li>
+<li><p>点击&quot;发送&quot;按钮</p></li>
+<li><p>查看响应结果</p></li>
+</ol>
+</section>
+<section id="id14">
+<h3>5.2 查看响应<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>Apifox 会以格式化的方式显示响应内容：</p>
+<ul class="simple">
+<li><p><strong>响应状态</strong>: 显示HTTP状态码（200、404、500等）</p></li>
+<li><p><strong>响应时间</strong>: 显示请求耗时</p></li>
+<li><p><strong>响应大小</strong>: 显示响应数据大小</p></li>
+<li><p><strong>响应体</strong>: 格式化显示JSON数据</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>5.3 保存请求<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>调整请求参数后</p></li>
+<li><p>点击&quot;保存为示例&quot;</p></li>
+<li><p>输入示例名称，例如：<code class="docutils literal notranslate"><span class="pre">获取第一页用户</span></code></p></li>
+<li><p>保存后可以随时复用</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id16">
+<h2>六、常见接口测试场景<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<section id="id17">
+<h3>6.1 测试用户管理接口<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<section id="id18">
+<h4>场景1：获取用户列表<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<p><strong>步骤</strong>:</p>
+<ol class="arabic simple">
+<li><p>选择 <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/users</span></code> 接口</p></li>
+<li><p>点击&quot;发送&quot;</p></li>
+<li><p>查看返回的用户列表</p></li>
+</ol>
+<p><strong>预期结果</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;张三&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zhangsan@example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;李四&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lisi@example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;王五&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wangwu@example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;pagination&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id19">
+<h4>场景2：创建新用户<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<p><strong>步骤</strong>:</p>
+<ol class="arabic simple">
+<li><p>选择 <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/users</span></code> 接口</p></li>
+<li><p>在请求体中输入：</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试用户&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test@example.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>点击&quot;发送&quot;</p></li>
+<li><p>查看返回结果</p></li>
+</ol>
+<p><strong>预期结果</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;用户创建成功&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;测试用户&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test@example.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id20">
+<h4>场景3：删除用户<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<p><strong>步骤</strong>:</p>
+<ol class="arabic simple">
+<li><p>选择 <code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/users/:id</span></code> 接口</p></li>
+<li><p>在路径参数中输入用户ID：<code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
+<li><p>点击&quot;发送&quot;</p></li>
+<li><p>再次调用 <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/users</span></code> 验证用户已被删除</p></li>
+</ol>
+</section>
+</section>
+<section id="id21">
+<h3>6.2 测试订单创建接口<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p><strong>步骤</strong>:</p>
+<ol class="arabic simple">
+<li><p>选择 <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/orders</span></code> 接口</p></li>
+<li><p>在请求体中输入：</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>点击&quot;发送&quot;</p></li>
+<li><p>查看返回的订单信息</p></li>
+</ol>
+<p><strong>预期结果</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;订单创建成功&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;张三&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;productName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;无线鼠标&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subtotal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">198</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;productName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;机械键盘&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">299</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subtotal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">299</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;totalAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">497</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-01-11T12:00:00.000Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id22">
+<h3>6.3 测试订单状态更新<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p><strong>步骤</strong>:</p>
+<ol class="arabic simple">
+<li><p>选择 <code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/orders/:id/status</span></code> 接口</p></li>
+<li><p>在路径参数中输入订单ID：<code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p>在请求体中输入：</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;paid&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>点击&quot;发送&quot;</p></li>
+<li><p>验证订单状态已更新</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id23">
+<h2>七、前后端协作流程<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
+<section id="id24">
+<h3>7.1 后端开发者工作流程<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>定义接口</strong>: 根据 API 文档设计接口</p></li>
+<li><p><strong>实现接口</strong>: 编写后端代码实现接口逻辑</p></li>
+<li><p><strong>在Apifox中创建接口文档</strong>: 添加接口说明、参数、响应示例</p></li>
+<li><p><strong>自测</strong>: 使用 Apifox 测试接口是否正常工作</p></li>
+<li><p><strong>分享给前端</strong>: 将 Apifox 项目链接分享给前端开发者</p></li>
+</ol>
+</section>
+<section id="id25">
+<h3>7.2 前端开发者工作流程<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>查看API文档</strong>: 在 Apifox 中查看接口文档</p></li>
+<li><p><strong>测试接口</strong>: 使用 Apifox 发送请求，了解接口行为</p></li>
+<li><p><strong>编写前端代码</strong>: 根据接口文档编写前端调用代码</p></li>
+<li><p><strong>联调测试</strong>: 前后端一起测试，确保数据交互正常</p></li>
+<li><p><strong>反馈问题</strong>: 如有问题，在 Apifox 中记录并反馈给后端</p></li>
+</ol>
+</section>
+<section id="id26">
+<h3>7.3 协作最佳实践<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>接口先行</strong>: 后端先定义接口文档，前端根据文档开发</p></li>
+<li><p><strong>Mock数据</strong>: 前端可以使用 Apifox 的 Mock 功能，不依赖后端即可开发</p></li>
+<li><p><strong>版本控制</strong>: 接口变更时及时更新文档，并通知前端</p></li>
+<li><p><strong>接口测试用例</strong>: 在 Apifox 中保存常用测试用例，方便回归测试</p></li>
+<li><p><strong>环境切换</strong>: 使用环境变量，快速切换开发/测试/生产环境</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id27">
+<h2>八、Apifox 高级功能<a class="headerlink" href="#id27" title="Link to this heading">#</a></h2>
+<section id="mock">
+<h3>8.1 Mock 数据<a class="headerlink" href="#mock" title="Link to this heading">#</a></h3>
+<p>前端开发者可以使用 Mock 功能模拟后端响应：</p>
+<ol class="arabic simple">
+<li><p>在接口设置中，选择&quot;Mock设置&quot;</p></li>
+<li><p>设置 Mock 规则，例如：</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@integer(1, 100)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@cname()&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@email()&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@integer(18, 60)&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;pagination&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pageSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@integer(1, 100)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;totalPages&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@integer(1, 10)&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>启用 Mock 服务，前端即可调用 Mock 接口</p></li>
+</ol>
+</section>
+<section id="id28">
+<h3>8.2 自动化测试<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<p>创建测试用例，自动化测试接口：</p>
+<ol class="arabic simple">
+<li><p>在接口中添加&quot;测试用例&quot;</p></li>
+<li><p>编写断言脚本：</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 断言响应状态码为200</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Status code is 200&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// 断言success字段为true</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Response has success=true&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">jsonData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">pm</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">success</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">eql</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>运行测试用例，自动验证接口</p></li>
+</ol>
+</section>
+<section id="id29">
+<h3>8.3 接口集合<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<p>将相关接口组织成集合，批量测试：</p>
+<ol class="arabic simple">
+<li><p>创建接口集合，例如：<code class="docutils literal notranslate"><span class="pre">用户管理接口集合</span></code></p></li>
+<li><p>添加相关接口到集合</p></li>
+<li><p>点击&quot;运行集合&quot;，批量执行所有接口测试</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id30">
+<h2>九、常见问题<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
+<section id="q1-apifox">
+<h3>Q1: Apifox 提示&quot;连接失败&quot;<a class="headerlink" href="#q1-apifox" title="Link to this heading">#</a></h3>
+<p><strong>解决方案</strong>:</p>
+<ol class="arabic simple">
+<li><p>确认后端服务已启动</p></li>
+<li><p>检查环境变量 baseUrl 是否正确</p></li>
+<li><p>检查防火墙设置</p></li>
+</ol>
+</section>
+<section id="q2-404">
+<h3>Q2: 接口返回 404 错误<a class="headerlink" href="#q2-404" title="Link to this heading">#</a></h3>
+<p><strong>解决方案</strong>:</p>
+<ol class="arabic simple">
+<li><p>确认接口路径是否正确</p></li>
+<li><p>检查后端路由配置</p></li>
+<li><p>查看后端控制台日志</p></li>
+</ol>
+</section>
+<section id="q3-500">
+<h3>Q3: 接口返回 500 错误<a class="headerlink" href="#q3-500" title="Link to this heading">#</a></h3>
+<p><strong>解决方案</strong>:</p>
+<ol class="arabic simple">
+<li><p>查看后端控制台错误日志</p></li>
+<li><p>检查请求参数是否正确</p></li>
+<li><p>联系后端开发者排查问题</p></li>
+</ol>
+</section>
+<section id="q4">
+<h3>Q4: 如何导出接口文档？<a class="headerlink" href="#q4" title="Link to this heading">#</a></h3>
+<p><strong>解决方案</strong>:</p>
+<ol class="arabic simple">
+<li><p>点击项目设置</p></li>
+<li><p>选择&quot;导出数据&quot;</p></li>
+<li><p>选择导出格式（Markdown、HTML、OpenAPI等）</p></li>
+<li><p>点击&quot;导出&quot;</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id31">
+<h2>十、总结<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
+<p>使用 Apifox 进行前后端联调的优势：</p>
+<ol class="arabic simple">
+<li><p><strong>提高效率</strong>: 可视化界面，快速测试接口</p></li>
+<li><p><strong>减少沟通</strong>: 统一的接口文档，减少误解</p></li>
+<li><p><strong>便于协作</strong>: 团队成员可以共享接口和测试用例</p></li>
+<li><p><strong>保证质量</strong>: 自动化测试，确保接口稳定性</p></li>
+</ol>
+<p>通过本指南，前端和后端开发者可以高效地进行接口联调，加快项目开发进度。</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="API%E6%96%87%E6%A1%A3.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">API 接口文档</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="%E5%89%8D%E5%90%8E%E7%AB%AF%E7%8B%AC%E7%AB%8B%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E6%8C%87%E5%8D%97.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">前后端独立接口测试指南</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 当前页面
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">一、Apifox 简介</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Apifox 的优势</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">二、准备工作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.1 安装 Apifox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.2 启动后端服务</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">三、在 Apifox 中创建项目</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.1 创建新项目</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.2 配置环境变量</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api">四、导入API接口</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.1 手动创建接口</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">示例：创建"获取用户列表"接口</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.2 批量导入接口</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">五、测试API接口</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5.1 发送请求</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5.2 查看响应</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">5.3 保存请求</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">六、常见接口测试场景</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.1 测试用户管理接口</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">场景1：获取用户列表</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">场景2：创建新用户</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">场景3：删除用户</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">6.2 测试订单创建接口</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">6.3 测试订单状态更新</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">七、前后端协作流程</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">7.1 后端开发者工作流程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">7.2 前端开发者工作流程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">7.3 协作最佳实践</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">八、Apifox 高级功能</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mock">8.1 Mock 数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">8.2 自动化测试</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">8.3 接口集合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">九、常见问题</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-apifox">Q1: Apifox 提示"连接失败"</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-404">Q2: 接口返回 404 错误</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-500">Q3: 接口返回 500 错误</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">Q4: 如何导出接口文档？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">十、总结</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/ningmengweilai/ProjectLabStar/edit/main/docs/source/test/Apifox测试指南.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          由 GitHub 编辑
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/test/Apifox测试指南.md.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, 宁梦未来.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3创建。
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  使用 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1构建.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

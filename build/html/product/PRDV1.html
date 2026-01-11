@@ -1,0 +1,1155 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>产品需求文档 (PRD) - Project LabStar (星研) &#8212; Project LabStar v0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=262058dc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=f17d22cc"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'product/PRDV1';</script>
+    <script src="../_static/custom.js?v=bcb55b57"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="测试文档" href="../test/index.html" />
+    <link rel="prev" title="产品文档" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="网页导航">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Project LabStar v0.1.0 文档</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    产品文档
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../test/index.html">
+    测试文档
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="当前页面">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    产品文档
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../test/index.html">
+    测试文档
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Jin-sjh/ProjectLabStar" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="章节导航">
+  <p class="bd-links__title" role="heading" aria-level="1">章节导航</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">产品文档</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">产品需求文档(星研)20260110</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="初始页面">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">产品文档</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">产品需求文档 (PRD) - Project LabStar (星研)</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="prd-project-labstar">
+<h1>产品需求文档 (PRD) - Project LabStar (星研)<a class="headerlink" href="#prd-project-labstar" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>版本历史<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>版本号</p></th>
+<th class="head"><p>日期</p></th>
+<th class="head"><p>修改人</p></th>
+<th class="head"><p>修改内容</p></th>
+<th class="head"><p>状态</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>v2.3</p></td>
+<td><p>2024-05-20</p></td>
+<td><p>Gemini (PM)</p></td>
+<td><p>MVP 范围重大调整：优先 Space B (全库 RAG)，暂缓 Space C</p></td>
+<td><p>正式版</p></td>
+</tr>
+<tr class="row-odd"><td><p>v2.2</p></td>
+<td><p>2024-05-20</p></td>
+<td><p>Gemini (PM)</p></td>
+<td><p>新增 MVP 规划章节，明确第一阶段交付范围</p></td>
+<td><p>已归档</p></td>
+</tr>
+<tr class="row-even"><td><p>v2.1</p></td>
+<td><p>2024-05-20</p></td>
+<td><p>Gemini (PM)</p></td>
+<td><p>技术架构升级：后端引入 RAGFlow 以增强 PDF 解析能力</p></td>
+<td><p>已归档</p></td>
+</tr>
+<tr class="row-odd"><td><p>v2.0</p></td>
+<td><p>2024-05-20</p></td>
+<td><p>Gemini (PM)</p></td>
+<td><p>合并 PRD 与 UI/UX 设计方案，确立&quot;三空间&quot;架构</p></td>
+<td><p>已归档</p></td>
+</tr>
+<tr class="row-even"><td><p>v1.0</p></td>
+<td><p>2024-05-20</p></td>
+<td><p>Gemini (PM)</p></td>
+<td><p>初始版本创建</p></td>
+<td><p>已归档</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="project-overview">
+<h2>1. 项目概览 (Project Overview)<a class="headerlink" href="#project-overview" title="Link to this heading">#</a></h2>
+<section id="background-problem">
+<h3>1.1 背景与痛点 (Background &amp; Problem)<a class="headerlink" href="#background-problem" title="Link to this heading">#</a></h3>
+<p>当前高校科研团队（课题组）面临三大核心矛盾：</p>
+<p><strong>1. 算力矛盾</strong></p>
+<p>硕博生需要 GPT-4/Claude 3.5 等高质量模型辅助科研，但个人支付困难且难以报销；导师有经费，但缺乏合规的订阅报销渠道。</p>
+<p><strong>2. 资产矛盾</strong></p>
+<p>铁打的营盘流水的兵。学生毕业带走知识和经验，课题组缺乏&quot;知识继承&quot;；Zotero 仅作为存储工具，缺乏深度的语义关联和检索能力。</p>
+<p><strong>3. 效率矛盾</strong></p>
+<p>通用 AI 有幻觉且易忘事；学生写周报痛苦，导师看周报不仅无法验证真伪，也无法量化进度。</p>
+</section>
+<section id="product-positioning">
+<h3>1.2 产品定位 (Product Positioning)<a class="headerlink" href="#product-positioning" title="Link to this heading">#</a></h3>
+<p><strong>LabStar (星研)：课题组的私有科研大脑与算力管家</strong></p>
+<p><strong>商业本质：</strong></p>
+<p>算力 SaaS 分发平台 + 团队知识沉淀工具</p>
+<p><strong>核心口号：</strong></p>
+<blockquote>
+<div><p>&quot;Open access to SOTA models, Close loop for lab knowledge.&quot;</p>
+</div></blockquote>
+</section>
+<section id="unique-selling-points">
+<h3>1.3 核心差异化 (Unique Selling Points)<a class="headerlink" href="#unique-selling-points" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>差异化特性</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>算力 SaaS 化</strong></p></td>
+<td><p>导师充值、学生使用、合规报销</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>分层沉浸体验</strong></p></td>
+<td><p>区分&quot;通用对话&quot;、&quot;知识库综述&quot;、&quot;单篇精读&quot;三种场景</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>寄生策略</strong></p></td>
+<td><p>深度集成 Zotero，降低迁移成本</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>隐形周报</strong></p></td>
+<td><p>基于&quot;灵感笔记&quot;自动生成周报，将监控转化为协作</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="user-personas">
+<h2>2. 用户画像 (User Personas)<a class="headerlink" href="#user-personas" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>用户角色</p></th>
+<th class="head"><p>典型身份</p></th>
+<th class="head"><p>核心诉求</p></th>
+<th class="head"><p>产品价值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>科研特种兵</p></td>
+<td><p>硕博研究生、青椒</p></td>
+<td><p>免费用 GPT-4、读文献不忘、周报好写</p></td>
+<td><p>高效科研工具 + 免费算力福利</p></td>
+</tr>
+<tr class="row-odd"><td><p>课题组长 (PI)</p></td>
+<td><p>博导、教授</p></td>
+<td><p>经费合规使用、知识资产留存、掌握进度</p></td>
+<td><p>团队管理抓手 + 知识库建设</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="ui-ux-design">
+<h2>3. 界面与交互设计 (UI/UX Design) - 核心体验<a class="headerlink" href="#ui-ux-design" title="Link to this heading">#</a></h2>
+<p>本产品采用 <strong>&quot;星际深空&quot;</strong> 设计语言，交互架构为 <strong>&quot;一枢纽 + 三空间 + 一通栏&quot;</strong>。</p>
+<section id="the-star-hub">
+<h3>3.1 首页：星际枢纽 (The Star Hub)<a class="headerlink" href="#the-star-hub" title="Link to this heading">#</a></h3>
+<p><strong>视觉风格：</strong></p>
+<p>动态 3D 星空背景，每一颗星星代表一篇文献（颜色区分读过/未读）。</p>
+<p><strong>核心组件：</strong></p>
+<p>中央全能对话框 (Omni-Chat)</p>
+<p><strong>模式切换器 (Mode Switcher)：</strong></p>
+<p>输入框左侧胶囊按钮，选择对话对象：</p>
+<ol class="arabic simple">
+<li><p>🟢 通用 AI (General AI) -&gt; 进入空间 A</p></li>
+<li><p>🟣 我的星系 (My Universe) -&gt; 进入空间 B</p></li>
+<li><p>🔵 单篇文献 (Specific Paper) -&gt; 搜索/选择后进入空间 C</p></li>
+</ol>
+</section>
+<section id="id2">
+<h3>3.2 核心工作台：三大独立空间<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="a-general-ai-space">
+<h4>A. 通用对话空间 (General AI Space)<a class="headerlink" href="#a-general-ai-space" title="Link to this heading">#</a></h4>
+<p><strong>场景：</strong></p>
+<p>润色邮件、编写代码、百科问答（不挂载知识库）</p>
+<p><strong>布局：</strong></p>
+<p>两栏式（中间对话流 + 右侧笔记栏）</p>
+<p><strong>特点：</strong></p>
+<p>极速响应，支持切换模型（Flash / Pro）</p>
+</section>
+<section id="b-knowledge-base-space">
+<h4>B. 全库研讨空间 (Knowledge Base Space)<a class="headerlink" href="#b-knowledge-base-space" title="Link to this heading">#</a></h4>
+<p><strong>场景：</strong></p>
+<p>课题组知识检索、跨文献综述、寻找研究灵感</p>
+<p><strong>布局：</strong></p>
+<p>三栏式</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>区域</p></th>
+<th class="head"><p>宽度</p></th>
+<th class="head"><p>功能描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>左栏</p></td>
+<td><p>20%</p></td>
+<td><p>局部星空图。高亮显示 AI 当前回答所参考的文献节点及其引用关系</p></td>
+</tr>
+<tr class="row-odd"><td><p>中栏</p></td>
+<td><p>50%</p></td>
+<td><p>对话流。回答内容必须包含引用脚标 [1]</p></td>
+</tr>
+<tr class="row-even"><td><p>右栏</p></td>
+<td><p>30%</p></td>
+<td><p>灵感笔记栏</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="c-deep-reading-space">
+<h4>C. 单篇精读空间 (Deep Reading Space)<a class="headerlink" href="#c-deep-reading-space" title="Link to this heading">#</a></h4>
+<p><strong>场景：</strong></p>
+<p>深度阅读某篇 PDF，查参数，看图表</p>
+<p><strong>布局：</strong></p>
+<p>三栏式</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>区域</p></th>
+<th class="head"><p>宽度</p></th>
+<th class="head"><p>功能描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>左栏</p></td>
+<td><p>15%</p></td>
+<td><p>PDF 目录大纲 / 缩略图</p></td>
+</tr>
+<tr class="row-odd"><td><p>中栏</p></td>
+<td><p>50%</p></td>
+<td><p>沉浸式 PDF 阅读器。支持划线高亮，划线后弹出菜单：📌 存入笔记 | 💬 针对此句提问</p></td>
+</tr>
+<tr class="row-even"><td><p>右栏</p></td>
+<td><p>35%</p></td>
+<td><p>AI 助手 + 笔记（Tab 切换）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>右栏 Tab 切换说明：</strong></p>
+<ul class="simple">
+<li><p><strong>Chat Tab：</strong> 针对本文的问答（RAG 范围仅限本文）</p></li>
+<li><p><strong>Note Tab：</strong> 本文的专属读书笔记</p></li>
+</ul>
+</section>
+</section>
+<section id="the-insight-sidebar-p0">
+<h3>3.3 全局组件：灵感笔记栏 (The Insight Sidebar) - P0 级功能<a class="headerlink" href="#the-insight-sidebar-p0" title="Link to this heading">#</a></h3>
+<p><strong>定义：</strong></p>
+<p>贯穿所有界面的侧边抽屉，用于存放碎片化灵感</p>
+<p><strong>核心特性：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>功能模块</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>卡片流 (Card Stream)</strong></p></td>
+<td><p>笔记以&quot;卡片&quot;形式堆叠，自动标记来源（如：From: GPT-4 / From: Nature Paper p.3）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AI 润色引擎 (Refine Engine)</strong></p></td>
+<td><p>底部常驻按钮 ✨ Refine</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>整理逻辑</strong></p></td>
+<td><p>重组散乱卡片</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>生成周报</strong></p></td>
+<td><p>&quot;基于本周笔记生成汇报&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>贡献知识</strong></p></td>
+<td><p>&quot;将笔记贡献至课题组公共库 (L2)&quot;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="functional-requirements">
+<h2>4. 功能需求详解 (Functional Requirements)<a class="headerlink" href="#functional-requirements" title="Link to this heading">#</a></h2>
+<section id="the-compute-wallet">
+<h3>4.1 模块一：算力管家 (The Compute Wallet)<a class="headerlink" href="#the-compute-wallet" title="Link to this heading">#</a></h3>
+<p><strong>优先级：</strong> P0 (商业基石)</p>
+<p><strong>核心功能：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>功能项</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>OpenRouter 聚合</strong></p></td>
+<td><p>后端对接 OpenRouter API，支持 GPT-4o, Claude 3.5, Gemini 1.5 Pro</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>资金池管理</strong></p></td>
+<td><p>导师端充值（支持发票），设置全组 / 单人每月限额</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>模型路由</strong></p></td>
+<td><p>默认使用高性价比模型（如 Haiku / Flash），学生手动切换昂贵模型时提示倍率</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>熔断机制</strong></p></td>
+<td><p>异常高频调用自动暂停并报警</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="rag-knowledge-engine">
+<h3>4.2 模块二：知识星空与 RAG (Knowledge Engine)<a class="headerlink" href="#rag-knowledge-engine" title="Link to this heading">#</a></h3>
+<p><strong>优先级：</strong> P0 (核心体验)</p>
+<p><strong>核心功能：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>功能项</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Zotero 同步</strong></p></td>
+<td><p>绑定 API Key，自动单向同步 PDF 及元数据</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RAG 引擎 (Powered by RAGFlow)</strong></p></td>
+<td><p>采用 RAGFlow 的 DeepDoc 模块进行深度文档解析</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>核心解决</strong></p></td>
+<td><p>双栏论文排版识别、公式 / 表格数据提取、OCR 扫描件识别</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>自动 Embedding</strong></p></td>
+<td><p>解析后的 Chunk 自动向量化，使用 UMAP 算法生成星空坐标</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>混合检索</strong></p></td>
+<td><p>关键词检索 (Elasticsearch) + 向量检索 (Infinity / Milvus) + 引用关系检索</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="privacy-data">
+<h3>4.3 模块三：三层隐私架构 (Privacy &amp; Data)<a class="headerlink" href="#privacy-data" title="Link to this heading">#</a></h3>
+<p><strong>优先级：</strong> P0 (安全合规)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>层级</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>L1</strong></p></td>
+<td><p>私有层 (Private)</p></td>
+<td><p>默认层。学生个人上传 / 同步的文献及笔记，物理隔离，导师不可见</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>L2</strong></p></td>
+<td><p>组内公开层 (Lab Public)</p></td>
+<td><p>导师上传的资料、学生主动&quot;贡献&quot;的笔记 / 文献。全组共享</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>L3</strong></p></td>
+<td><p>贡献机制 (Contribution)</p></td>
+<td><p>在周报生成或笔记整理时，引导学生将高价值笔记流转至 L2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="memory-anchor">
+<h3>4.4 模块四：记忆锚点 (Memory Anchor)<a class="headerlink" href="#memory-anchor" title="Link to this heading">#</a></h3>
+<p><strong>优先级：</strong> P0 (提升可用性)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>功能</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Pin (设为公理)</strong></p></td>
+<td><p>用户在对话或原文中选中文字 -&gt; 📌 Pin</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>注入机制</strong></p></td>
+<td><p>Pin 的内容加入 Global Context，作为 System Prompt 强制注入后续对话，解决长文本遗忘和幻觉问题</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="technical-architecture">
+<h2>5. 技术架构 (Technical Architecture)<a class="headerlink" href="#technical-architecture" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>5.1 前端技术栈<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>技术</p></th>
+<th class="head"><p>用途</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>React</p></td>
+<td><p>UI 框架</p></td>
+</tr>
+<tr class="row-odd"><td><p>Three.js</p></td>
+<td><p>星空渲染</p></td>
+</tr>
+<tr class="row-even"><td><p>TailwindCSS</p></td>
+<td><p>样式框架</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="orchestrator">
+<h3>5.2 后端服务层 (Orchestrator)<a class="headerlink" href="#orchestrator" title="Link to this heading">#</a></h3>
+<p><strong>技术栈：</strong> Python (FastAPI)</p>
+<p><strong>职责范围：</strong></p>
+<ul class="simple">
+<li><p>用户鉴权</p></li>
+<li><p>计费扣费</p></li>
+<li><p>Zotero 同步调度</p></li>
+<li><p>笔记管理</p></li>
+</ul>
+</section>
+<section id="rag">
+<h3>5.3 核心 RAG 引擎<a class="headerlink" href="#rag" title="Link to this heading">#</a></h3>
+<p><strong>技术栈：</strong> RAGFlow (Docker 部署)</p>
+<p><strong>职责范围：</strong></p>
+<ul class="simple">
+<li><p>PDF 解析 (OCR / Layout)</p></li>
+<li><p>分块 (Chunking)</p></li>
+<li><p>检索 (Retrieval)</p></li>
+<li><p>重排序 (Rerank)</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>5.4 数据库组件<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>数据库</p></th>
+<th class="head"><p>用途</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PostgreSQL</p></td>
+<td><p>用户、账单、笔记结构化数据</p></td>
+</tr>
+<tr class="row-odd"><td><p>Elasticsearch (via RAGFlow)</p></td>
+<td><p>倒排索引，用于精准关键词匹配</p></td>
+</tr>
+<tr class="row-even"><td><p>Infinity / Milvus (via RAGFlow)</p></td>
+<td><p>向量数据库，存储 Embedding</p></td>
+</tr>
+<tr class="row-odd"><td><p>S3 兼容存储 (MinIO / OSS)</p></td>
+<td><p>文件存储</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="llm">
+<h3>5.5 LLM 接入<a class="headerlink" href="#llm" title="Link to this heading">#</a></h3>
+<p><strong>OpenRouter API Proxy</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="gtm-strategy">
+<h2>6. 运营与推广 (GTM Strategy)<a class="headerlink" href="#gtm-strategy" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>6.1 种子轮<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>寻找 5 个能源 / 材料类课题组（文献多、图表多、经费足）内测</p>
+</section>
+<section id="id6">
+<h3>6.2 插件战术<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>开发 Zotero 插件 LabStar Sync，作为引流入口</p>
+</section>
+<section id="id7">
+<h3>6.3 定价策略 (建议)<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>费用类型</p></th>
+<th class="head"><p>价格</p></th>
+<th class="head"><p>包含内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SaaS 费</p></td>
+<td><p>¥299 / 月 / 组</p></td>
+<td><p>含基础功能 + 10GB 存储</p></td>
+</tr>
+<tr class="row-odd"><td><p>算力费</p></td>
+<td><p>预充值，按 Token 实扣</p></td>
+<td><p>可加收 10% 服务费</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="risk-assessment">
+<h2>7. 风险评估 (Risk Assessment)<a class="headerlink" href="#risk-assessment" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>风险点</p></th>
+<th class="head"><p>影响</p></th>
+<th class="head"><p>应对策略</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>OpenRouter 不稳定</strong></p></td>
+<td><p>服务中断</p></td>
+<td><p>准备 Azure OpenAI / DeepSeek 直连作为备线</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>经费消耗过快</strong></p></td>
+<td><p>导师停用</p></td>
+<td><p>默认开启上下文压缩；前端显著展示&quot;本次对话预计消耗 ¥0.5&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RAGFlow 资源占用</strong></p></td>
+<td><p>服务器成本高</p></td>
+<td><p>OCR 模型需要 GPU 推理。初期可关闭 DeepDoc 的 OCR 功能，仅用 Layout Analysis，或使用 Serverless GPU 部署解析服务</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>合规性风险</strong></p></td>
+<td><p>法律监管限制</p></td>
+<td><p>限制在校内 / 课题组内网使用；严格内容审计；不涉及公网 To C 销售</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="mvp-mvp-scope">
+<h2>8. MVP 产品范围 (MVP Scope)<a class="headerlink" href="#mvp-mvp-scope" title="Link to this heading">#</a></h2>
+<p><strong>目标：</strong> 在 4-5 周内上线，验证&quot;全库 RAG 效果&quot;与&quot;导师付费意愿&quot;</p>
+<section id="must-have-p0">
+<h3>8.1 必须包含 (Must Have - P0)<a class="headerlink" href="#must-have-p0" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>功能模块</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>资金池系统</strong></p></td>
+<td><p>极简导师后台（邀请码、充值、额度）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>风控与合规</strong></p></td>
+<td><p>内置敏感词过滤，仅限邀请注册</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Zotero 同步与 RAGFlow 集成</strong></p></td>
+<td><p>核心路径：输入 Zotero Key -&gt; RAGFlow 后台自动拉取 PDF -&gt; 解析入库</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>全库问答 (Space B)</strong></p></td>
+<td><p>这是 MVP 的绝对核心。支持针对整个 Zotero 文件夹进行提问（&quot;总结一下关于钙钛矿稳定性的所有观点&quot;）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>核心界面 (Space B + Sidebar) 详细说明：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>区域</p></th>
+<th class="head"><p>功能描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>左侧</strong></p></td>
+<td><p>极简星空（Canvas 2D），展示文献聚类</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>中间</strong></p></td>
+<td><p>对话流。回答必须带引用来源（点击来源可打开 PDF 预览，但不需要做精读功能）</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>右侧</strong></p></td>
+<td><p>灵感笔记栏 + 一键生成周报</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="out-of-scope-phase-2">
+<h3>8.2 暂不开发 (Out of Scope - Phase 2)<a class="headerlink" href="#out-of-scope-phase-2" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>功能</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>空间 C (单篇精读)</strong></p></td>
+<td><p>MVP 阶段，点击引用来源仅打开浏览器原生的 PDF 预览，不做专门的划线、Pin、高亮交互</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>复杂的 L3 贡献流程</strong></p></td>
+<td><p>暂不支持自动流转</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>移动端适配</strong></p></td>
+<td><p>仅支持 PC 端</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><em>文档版本：v2.3</em>
+<em>最后更新：2024-05-20</em>
+<em>维护者：Gemini (PM)</em></p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">产品文档</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../test/index.html"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">测试文档</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 当前页面
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">版本历史</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-overview">1. 项目概览 (Project Overview)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-problem">1.1 背景与痛点 (Background &amp; Problem)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product-positioning">1.2 产品定位 (Product Positioning)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-selling-points">1.3 核心差异化 (Unique Selling Points)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-personas">2. 用户画像 (User Personas)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ui-ux-design">3. 界面与交互设计 (UI/UX Design) - 核心体验</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-star-hub">3.1 首页：星际枢纽 (The Star Hub)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2 核心工作台：三大独立空间</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-general-ai-space">A. 通用对话空间 (General AI Space)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-knowledge-base-space">B. 全库研讨空间 (Knowledge Base Space)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-deep-reading-space">C. 单篇精读空间 (Deep Reading Space)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-insight-sidebar-p0">3.3 全局组件：灵感笔记栏 (The Insight Sidebar) - P0 级功能</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-requirements">4. 功能需求详解 (Functional Requirements)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-compute-wallet">4.1 模块一：算力管家 (The Compute Wallet)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rag-knowledge-engine">4.2 模块二：知识星空与 RAG (Knowledge Engine)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-data">4.3 模块三：三层隐私架构 (Privacy &amp; Data)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-anchor">4.4 模块四：记忆锚点 (Memory Anchor)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-architecture">5. 技术架构 (Technical Architecture)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.1 前端技术栈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orchestrator">5.2 后端服务层 (Orchestrator)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rag">5.3 核心 RAG 引擎</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.4 数据库组件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llm">5.5 LLM 接入</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gtm-strategy">6. 运营与推广 (GTM Strategy)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.1 种子轮</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.2 插件战术</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.3 定价策略 (建议)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-assessment">7. 风险评估 (Risk Assessment)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mvp-mvp-scope">8. MVP 产品范围 (MVP Scope)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#must-have-p0">8.1 必须包含 (Must Have - P0)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-scope-phase-2">8.2 暂不开发 (Out of Scope - Phase 2)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/ningmengweilai/ProjectLabStar/edit/main/docs/source/product/PRDV1.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          由 GitHub 编辑
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/product/PRDV1.md.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, 宁梦未来.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3创建。
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  使用 <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1构建.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
